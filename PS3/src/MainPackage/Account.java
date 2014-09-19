@@ -6,41 +6,41 @@ import java.util.Scanner;
 public class Account {
 	
 	Scanner input = new Scanner(System.in);
-	private int id = 0;
-	private double balance = 0;
-	private double annualInterestRate = 0;
-	private Date dateCreated;
-	private double withdrawamount;
-	private double depositamount;
+	public int id = 0;
+	public double balance = 0;
+	public double annualInterestRate = 0;
+	public Date dateCreated;
+	public double withdrawamount;
+	public double depositamount;
 	
 	
 	//gets and sets
-	private int getid (){
+	public int getid (){
 		return id;
 	}
-	private void setid (int newid){
+	public void setid (int newid){
 		id = newid;
 	}
-	private double getbalance (){
+	public double getbalance (){
 		return balance;
 	}
-	private void setbalance (double newbalance){
+	public void setbalance (double newbalance){
 		balance = newbalance;
 	}
-	private double getrate (){
+	public double getrate (){
 		return annualInterestRate;
 	}
-	private void setrate (double newrate){
+	public void setrate (double newrate){
 		annualInterestRate = newrate;
 	}
-	private double getmonthlyrate (double annualInterestRate){
+	public double getmonthlyrate (double annualInterestRate){
 		double monthlyrate = (annualInterestRate / 12);
 		return (monthlyrate);//this is to get monthly rate when needed
 	}
-	private Date getdate (){
+	public Date getdate (){
 		return dateCreated;
 	}
-	private void withdraw (double withdrawamount){//throws
+	public void withdraw (double withdrawamount){//throws
 										//InsufficientFundsException{
 		
 		if (withdrawamount <= balance){
@@ -48,16 +48,17 @@ public class Account {
 		}
 		else{
 			double funds = withdrawamount - balance;
-			println("You don't have enough money, you need an extra " + funds);
+			System.out.println("You don't have enough money, you need an extra " + funds);
 			//throw new InsufficientFundsException(funds);
 		}
 	}
-	private void deposit (double depositamount){
+	
+	public void deposit (double depositamount){
 		balance = balance + depositamount;
 	}
 	
 	
-	public Account newacc = new Account (){
+	public Account (){
 		
 	}
 	
